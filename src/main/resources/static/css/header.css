@@ -1,0 +1,43 @@
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0.75rem 0;
+}
+
+header h1 {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin: 0;
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+}
+
+header h1:hover {
+    transform: scale(1.02);
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Navigation links (if added in future) */
+header nav {
+    display: flex;
+    gap: 2rem;
+    margin-left: auto;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+header nav a:hover {
+    opacity: 0.8;
+}
