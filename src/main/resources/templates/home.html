@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MentorMatrix - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: #f5f7fa;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        main {
+            flex: 1;
+        }
+        
+        .hero h2 {
+            font-weight: 700;
+            color: #2d3748;
+        }
+        
+        .hero-subtitle {
+            color: #718096;
+            font-weight: 500;
+            font-size: 1.2rem;
+        }
+        
+        .btn-custom {
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        .card {
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.12) !important;
+        }
+        
+        .card-title {
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        .card-text {
+            color: #4a5568;
+        }
+        
+        .feature-box {
+            background-color: white;
+            border-radius: 0.75rem;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .feature-box h3 {
+            color: #2d3748;
+            font-weight: 700;
+        }
+        
+        .feature-box ul li {
+            color: #4a5568;
+        }
+        
+        footer {
+            background-color: #2d3748;
+            color: #cbd5e0;
+            border-top: 1px solid #1a202c;
+            margin-top: auto;
+        }
+        
+        footer h5 {
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        footer ul {
+            list-style: none;
+        }
+        
+        footer ul li {
+            margin-bottom: 0.75rem;
+        }
+        
+        footer ul li a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        footer ul li a:hover {
+            color: #667eea;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(102, 126, 234, 0.2);
+            color: #667eea;
+            border-radius: 50%;
+            margin-right: 0.75rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        
+        .social-links a:hover {
+            background-color: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #4a5568;
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+    </style>
+    <script src="http://localhost:35729/livereload.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>MentorMatrix</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="container py-5">
+            <div class="hero mb-5">
+                <h2 th:text="'Welcome back, ' + ${userName} + '!'"></h2>
+                <p>Your gateway to academic excellence and mentorship</p>
+                <div class="btn-group-custom">
+                    <button class="btn btn-primary btn-lg">Find a Mentor</button>
+                    <button class="btn btn-outline-primary btn-lg">Browse Courses</button>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">📚 Expert Mentors</h5>
+                            <p class="card-text">Connect with experienced mentors from top institutions who are passionate about helping students succeed.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">🎯 Personalized Learning</h5>
+                            <p class="card-text">Get customized learning paths tailored to your goals, pace, and learning style.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">🏆 Track Progress</h5>
+                            <p class="card-text">Monitor your achievements and milestones as you grow with detailed analytics and feedback.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-5">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-md-3">
+                    <h5>About Us</h5>
+                    <ul>
+                        <li><a href="#">Our Mission</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="#">Find a Mentor</a></li>
+                        <li><a href="#">Browse Courses</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Follow Us</h5>
+                    <div class="social-links">
+                        <a href="#">f</a>
+                        <a href="#">𝕏</a>
+                        <a href="#">in</a>
+                        <a href="#">ig</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom pt-4 text-center">
+                <p class="m-0">&copy; 2025 MentorMatrix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
