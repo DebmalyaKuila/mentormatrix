@@ -4,6 +4,7 @@ header {
     color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 0.75rem 0;
+    position: relative;
 }
 
 header h1 {
@@ -12,6 +13,7 @@ header h1 {
     margin: 0;
     font-size: 2rem;
     transition: transform 0.3s ease;
+    white-space: nowrap;
 }
 
 header h1:hover {
@@ -22,22 +24,133 @@ header .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 1rem;
 }
 
-/* Navigation links (if added in future) */
-header nav {
+/* Navbar */
+nav {
     display: flex;
     gap: 2rem;
-    margin-left: auto;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
 }
 
-header nav a {
+nav a {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    transition: opacity 0.3s ease;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    white-space: nowrap;
 }
 
-header nav a:hover {
-    opacity: 0.8;
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
 }
+
+nav a.active {
+    background-color: rgba(255, 255, 255, 0.3);
+    font-weight: 600;
+}
+
+/* Hamburger Menu */
+.navbar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-left: auto;
+    color: white;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.navbar-toggle:hover {
+    transform: scale(1.1);
+}
+
+.navbar-toggle.active {
+    transform: rotate(90deg);
+}
+
+.navbar-toggle i {
+    display: block;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    header {
+        padding: 0.75rem 0;
+    }
+
+    header .container {
+        flex-wrap: nowrap;
+        padding: 0 1rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+
+    nav {
+        position: fixed;
+        top: 3.75rem;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    nav.active {
+        max-height: 18.75rem;
+    }
+
+    nav a {
+        padding: 1rem 1.5rem;
+        border-radius: 0;
+        width: 100%;
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        flex: none;
+    }
+
+    nav a:last-child {
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    header .container {
+        padding: 0 0.75rem;
+    }
+
+    nav a {
+        padding: 0.85rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    .navbar-toggle {
+        padding: 0.25rem;
+    }
+}
+
